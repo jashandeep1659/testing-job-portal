@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+<!--  -->
+{% block title %} My Applications {% endblock title %}
+<!--  -->
+{% block content %}
+
+<section class="height mx-2 my-3" id="latest_jobs">
+    <div class="row mx-0 gx-2 gy-3">
+        {% for job in posts %}
+        <div class="col-md-8 col-12">
+            <a href="">
+                <div class="card">
+                    <div class="card-header">{{job.company_name}}</div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p class="text-dark mb-1">{{job.post.title}}</p>
+                            <div class="text-secondary">
+                                <ul>
+                                    <li>
+                                        <i class="bx bx-alarm"></i>
+                                        {{job.post.part_or_full_time}}
+                                    </li>
+                                    <li>
+                                        <i class="bx bx-building-house"></i>
+                                        {{job.post.office_or_home}}
+                                    </li>
+                                    <li>
+                                        <i class="bx bx-money"></i> Starting
+                                        Salary: ${{job.post.starting_salary}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="blockquote-footer">
+                                By
+                                <cite title="Source Title"
+                                    >{{job.post.by.first_name}}</cite
+                                >
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}

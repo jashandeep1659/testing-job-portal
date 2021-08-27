@@ -1,0 +1,74 @@
+{% extends "core/base.html" %}
+{% block title %}
+  Create Post
+{% endblock %}
+{% block content %}
+  <section class="mt-3 mx-3 mb-3" id="create_post" enctype="multipart/form-data">
+    <div class="">
+      <h1 class="my-3 text-center">Create Job Post</h1>
+      <form class="" method="post">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-12 col-12">
+            <label for="">Title</label>
+            <input type="text" name="title"  value="">
+          </div>
+          <div class="col-md-6 col-12">
+            <label for="">Company Name</label>
+            <input type="text" name="company_name" value="">
+          </div>
+          <div class="col-md-6 col-12">
+            <label for="">Location</label>
+            <input type="text" name="location" value="">
+          </div>
+          <div class="col-md-4 col-12">
+            <label for="">Starting date</label>
+            <input type="date" name="starting_date"  value="">
+          </div>
+          <div class="col-md-4 col-12">
+            <label for="">Last date</label>
+            <input type="date" name="end_date"  value="">
+          </div>
+          <div class="col-md-4 col-12">
+            <label for="">Starting salary</label>
+            <input type="number" name="starting_salary" value="">
+          </div>
+          <div class="col-md-4 col-12">
+            <label for="">Skills</label>
+            <input type="text" name="skills" value="">
+          </div>
+
+          <div class="col-md-4 col-12">
+            <label for="">Education Required</label>
+            <input type="text" name="eductaion_required" value="">
+          </div>
+          <div class="col-md-4 col-12">
+            <label for="">vacancies</label>
+            <input type="number" name="vacancies"  value="">
+          </div>
+          <div class="col-md-4 col-12">
+            <label for="">Image</label>
+            <input type="file" name="image"  value="">
+          </div>
+          <div class="col-md-4 col-12 select">
+            <label class="me-1">Choose:</label>
+              <select name="part_or_full_time" >
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+              </select>
+          </div>
+          <div class="col-md-4 col-12 select">
+            <label  class="me-1">Choose:</label>
+              <select name="office_or_home" >
+                <option value="Work from home">Work from home</option>
+                <option value="Office">Office</option>
+              </select>
+          </div>
+        </div>
+        <div class="button d-flex justify-content-center">
+          <button type="submit" name="button">Submit Post</button>
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}

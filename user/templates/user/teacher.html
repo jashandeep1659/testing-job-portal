@@ -1,0 +1,27 @@
+  {% extends 'core/base.html' %}
+  {% block title %}Become Teacher{% endblock title %}
+  {% block content %}
+  <section id="login">
+    <style media="screen">
+      .errorlist{
+        list-style:none;
+        color :red;
+      }
+    </style>
+  <div class="form">
+      <h1 class="text-center">Recruiter</h1>
+      <h5 class="text-center mb-3">Create Recruiter account.</h5>
+      <p class="text-danger">{{error}}</p>
+      <form method='post'  enctype="multipart/form-data">
+        {% csrf_token %}
+          <input type="text" name="graduation" placeholder="Graduation">
+          <input type="file" name="image" id="fileToUpload">
+          <div class="button d-flex justify-content-center">
+              <button type="submit">Become Recruiter</button>
+          </div>
+      </form>
+    <p class="text-center mt-3 mb-2"><a href="{% url 'home' %}">Cancel the process.</a></p>
+    <p class="text-center text-dark">you will become Recruiter after getting verified.</p>
+  </div>
+  </section>
+  {% endblock content %}

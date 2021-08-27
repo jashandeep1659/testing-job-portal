@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+<section id="login">
+  <style media="screen">
+    .errorlist{
+      list-style:none;
+      color :red;
+    }
+  </style>
+<div class="form">
+    <h1 class="text-center">Login</h1>
+    <h5 class="text-center mb-3">Welcome back!</h5>
+    <p class="text-danger">{{error}}</p>
+    <form method='post'>
+      {% csrf_token %}
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <div class="button d-flex justify-content-center">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+  <p class="text-center mt-3 mb-2"><a href="{% url 'home' %}">Forget password?</a></p>
+    <p class="text-center mt-1"><a href="{% url 'signup' %}">Create Account</a></p>
+</div>
+</section>
+{% endblock content %}

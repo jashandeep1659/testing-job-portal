@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+:root{
+    --primary : #fff;
+    --dark-blue : #080f5b;
+    --light-skin : #f4e4c1;
+    --dark-skin : #e4c580;
+    --success-green : #15db95;
+    --light-blue : #0d19a3;
+}
+.height{
+ min-height: 86vh;
+}
+img{
+    max-width: 100%;
+}
+main{
+    padding-top: 8vh;
+}
+a{
+  text-decoration: none;
+}
+footer{
+  background-color: var(--dark-blue);
+  color: var(--primary);
+}
+nav.navbar{
+    background-color: var(--dark-blue);
+    min-height: 8vh;
+}
+nav.navbar form input{
+    background-color: var(--light-skin)
+}
+nav.navbar form button{
+    background-color: var(--dark-skin);
+    color: var(--primary);
+}
+#main_banner{
+    min-height: 92vh;
+    position: relative;
+    padding: 10px 0;
+}
+#main_banner .row{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#main_banner h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 56px;
+    font-weight: bolder;
+
+}
+#main_banner button{
+    padding: 10px 25px;
+    font-weight: bold;
+    outline: none;
+    background-color: var(--light-blue);
+    color: var(--primary);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all .3s ease-in-out;
+}
+#main_banner button:hover{
+    border: 2px solid var(--light-blue);
+    background-color: var(--primary);
+    color: var(--light-blue);
+}
+#our_students_with_jobs img{
+    padding: 1px;
+}
+#login{
+    min-height: 92vh;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+#login div.form {
+    display:inline-block;
+    background-color: var(--primary);
+    border-radius: 20px;
+    padding: 50px 30px;
+    min-width: 40%;
+}
+@media only screen and (max-width: 768px) {
+    #login div.form  {
+        min-width: 90%;
+    }
+  }
+#login div.form form{
+    display: flex;
+    flex-direction: column;
+}
+#login div.form form input{
+    margin: 10px 0;
+    padding: 3px 5px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid var(--light-blue);
+    border-radius: 5px;
+}
+#login div.form form input:focus{
+    outline: none;
+    border: 1px solid;
+    border-color: var(--dark-skin);
+}
+#login div.form form button{
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-weight: bold;
+    outline: none;
+    background-color: var(--light-blue);
+    color: var(--primary);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all .3s ease-in-out;
+}
+#login div.form form button:hover{
+    border: 2px solid var(--light-blue);
+    background-color: var(--primary);
+    color: var(--light-blue);
+}
+#create_post{
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+}
+#create_post form input{
+  margin: 15px 0;
+  padding: 3px 5px;
+  font-size: 20px;
+  outline: none;
+  border: 1px solid var(--light-blue);
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+}
+#create_post form .select{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+#create_post  form button{
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-weight: bold;
+    outline: none;
+    background-color: var(--light-blue);
+    color: var(--primary);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all .3s ease-in-out;
+}
+#create_post  form button:hover{
+    border: 2px solid var(--light-blue);
+    background-color: var(--primary);
+    color: var(--light-blue);
+}
+#latest_jobs{
+  min-height: 86vh;
+}
+#latest_jobs a div{
+  transition: all .3s ease;
+}
+#latest_jobs a:hover div{
+  transform: scale(1.01);
+}
+#latest_jobs a div ul{
+  font-size: 13px;
+  margin-top: 0;
+  list-style: none;
+  padding-left: 3px;
+}
+#create_post textarea{
+  font-size: 20px;
+  margin: 15px 0;
+  padding: 3px 5px;
+  font-size: 20px;
+  outline: none;
+  border: 1px solid var(--light-blue);
+  border-radius: 5px;
+  display: block;
+  min-height: 100px;
+}

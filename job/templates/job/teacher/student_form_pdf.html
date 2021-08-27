@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{student.first_name}}</title>
+  </head>
+  <body>
+    <div >
+      <center>
+        <h1 style="font-size:30px; margin-bottom:0px; padding:0;">Job Portal</h1>
+        </center>
+        <hr>
+    </div>
+
+    <div class="" style="font-size:18px;">
+      <p style="text-align:left"><strong>About Job</strong></p>
+      <p style="margin:0;"><strong>Job Title: </strong>{{post.title}}</p>
+      <p style="margin:0;"><strong>Recruteer: </strong>{{post.by}}</p>
+      <p style="margin:0;"><strong>Company: </strong>{{post.company_name}}</p>
+    </div>
+    <div class="" style="font-size:18px; margin-bottom:10px;">
+      <p style="text-align:left"><strong>About Applier</strong></p>
+        <div style="width:100px">
+        <img src="{{photo_url}}"  alt="" >
+      </div>
+      <p style="margin:0;"><strong>First name: </strong>{{student.first_name}}</p>
+      <p style="margin:0;"><strong>Last name: </strong>{{student.last_name}}</p>
+      <p style="margin:0;"><strong>Education: </strong>{{student.eduction}}</p>
+    </div>
+  </body>
+</html>

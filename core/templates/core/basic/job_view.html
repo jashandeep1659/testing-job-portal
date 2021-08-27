@@ -1,0 +1,41 @@
+{% extends "core/base.html" %}
+{% block title %}
+{{post.title}}
+{% endblock %}
+{% block content %}
+<section class="height mx-2 my-3" id="job-view">
+  <div class="row mx-0 gx-0">
+    <div class="col-md-9">
+
+    <p class="mb-0">By <i>{{post.company_name}}</i></p>
+    <h3>{{post.title}}</h3>
+    <div class="container px-0 mx-0">
+      <img src="{{post.image.url}}" alt="" class="w-100">
+    </div>
+    <div class="mt-3">
+      <ul style="  font-size: 15px; margin-top: 0; list-style: none; padding-left: 3px;">
+        <li class="ms-1 mt-1"><strong><i class='bx bx-building-house' ></i> Location:</strong> {{post.office_or_home}}</li>
+        <li class="ms-1 mt-1"><strong><i class='bx bx-time-five' ></i> Time:</strong> {{post.part_or_full_time}}</li>
+        <li class="ms-1 mt-1"><strong><i class='bx bx-calendar-check' ></i> Form submiting Date:</strong> {{post.start_date}}</li>
+        <li class="ms-1 mt-1"><strong><i class='bx bx-calendar-x' ></i> Last Date of submiting form: </strong>{{post.end_date}}</li>
+        <li class="ms-1 mt-1"><strong><i class='bx bx-book-content' ></i> Education:</strong> {{post.education_needed}}</li>
+        <li class="ms-1 mt-1"><strong><i class='bx bx-command' ></i> Skills:</strong> {{post.skills}}</li>
+        <li class="ms-1 mt-1"><strong><i class='bx bx-location-plus' ></i> Office location:</strong> {{post.location}}</li>
+        <li class="ms-1 mt-1"><strong><i class='bx bxs-hand' ></i> Vacancies:</strong> {{post.vacancies}}</li>
+      </ul>
+    </div>
+    <div class="my-3 py-2">
+      <a href="{% url 'apply_job' post.id post.slug %}" class="btn btn-success">Apply Now</a>
+      {% if open == True %}
+      {% else %}
+      <p class="text-danger">Sorry, Not avaiable to apply.</p>
+      {% endif %}
+    </div>
+  </div>
+  <div class="col-md-3">
+
+
+  </div>
+</div>
+</section>
+{% endblock %}

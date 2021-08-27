@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Welcome{% endblock title %}
+{% block content %}
+<section id="main_banner">
+    <div class="row mx-2">
+        <div class="col-md-6 col-12 order-2 order-md-1 pt-4 d-flex justify-content-center flex-column">
+            <h1>Get your Job with us.</h1>
+            <div class="mt-3 mb-3">
+                <button class="">Apply Now</button>
+            </div>
+        </div>
+        <div class="col-md-6 col-12 order-1 order-md-2 pt-4 d-flex justify-content-center flex-column">
+            <img src="{% static 'images/undraw_online_resume_re_ru7s.svg' %}" class="py-2 my-auto" alt="">
+        </div>
+    </div>
+</section>
+
+<section id="our_students_with_jobs" class="mb-3">
+    <h1 class="text-center mb-4">Our Students with jobs</h1>
+    <div class="row mx-2 gx-2 gy-2">
+
+        {% for student in students %}
+        <div class="col-md-6 col-12 ">
+            <div class="row border mx-0 gx-1">
+                <div class="col-md-4 col-4 d-flex justify-content-center flex-column">
+                   <img src="{{student.profile_photo.url}}" alt="">
+                </div>
+                <div class="col-8 d-flex flex-column justify-content-center">
+                    <h6><strong>{{student.name}}</strong></h6>
+                    <h6 class="my-0">{{student.company_name}}</h6>
+                    <p class="text-justify"><small>{{student.description|truncatechars:90}}</small></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}

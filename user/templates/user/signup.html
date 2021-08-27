@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+{% block title %}
+  Sign Up
+{% endblock title %}
+{% block content %}
+<section id="login">
+  <style media="screen">
+    .errorlist{
+      list-style:none;
+      color :red;
+    }
+  </style>
+<div class="form">
+    <h1 class="text-center">Sign Up</h1>
+    <h5 class="text-center mb-3">Welcome back!</h5>
+    <p class="text-danger my-0">
+    {% for field in form  %}
+      {{field.errors}}
+    {% endfor %}
+    <form method="post">
+      {% csrf_token %}
+      {{form.email}}
+      {{form.first_name}}
+      {{form.last_name}}
+      {{form.phone_number}}
+      {{form.password1}}
+      {{form.password2}}
+        <div class="d-flex align-items-center  justify-content-center">
+          <input class="my-0"type="checkbox" name="notify_me" value="notify_me" checked><p class="my-0 ms-1">Notify me</p>
+        </div>
+        <div class="button d-flex justify-content-center">
+            <button type="submit">Create Account</button>
+        </div>
+    </form>
+    <p>By creating the account you are agreeing our <br><a href="" class="d-block text-center">terms and condtions</a></p>
+    <p class="text-center mt-1"><a href="{% url 'login' %}">Already have account?</a></p>
+</div>
+</section>
+<script type="text/javascript">
+  document.getElementsByName('email')[0].setAttribute('placeholder', 'Email');
+  document.getElementsByName('first_name')[0].setAttribute('placeholder', 'First Name');
+  document.getElementsByName('last_name')[0].setAttribute('placeholder', 'Last Name');
+  document.getElementsByName('phone_number')[0].setAttribute('placeholder', 'Phone Number');
+  document.getElementsByName('password1')[0].setAttribute('placeholder', 'Password');
+  document.getElementsByName('password2')[0].setAttribute('placeholder', 'Confirm Password');
+</script>
+{% endblock content %}
