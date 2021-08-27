@@ -33,6 +33,7 @@ def job_view(request, id , slug):
     }
     return render(request, 'core/basic/job_view.html', context)
 
+@login_required(login_url = 'login')
 def apply_job(request, id , slug):
     post= get_object_or_404(Job_Post, id=id ,slug=slug)
     user = request.user
